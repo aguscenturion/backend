@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-const { token } = require('morgan');
 const User = require('../models/User');
 
 // Función para validar los tokens recibidos en las rutas protegidas

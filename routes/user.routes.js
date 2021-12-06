@@ -1,4 +1,5 @@
 // Utilizamos el método Router de la librería express
+//Router permite construir las rutas
 const router = require('express').Router();
 
 const {validar_jwt} = require('../middlewares/validar_jwt')
@@ -30,8 +31,10 @@ body('username','El Email es incorrecto')
 .custom(siExisteEmail),
 body('password','La contraseña debe contener 6 caracteres')
 .isLength({min: 6})
+.not()
 .isEmpty(),
 body('role', 'El rol no es valido')
+.not()
 .isEmpty()
 .custom(siExisteRol),
 validarCampos,

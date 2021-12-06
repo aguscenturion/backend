@@ -21,7 +21,7 @@ ctrlHome.rutaPost = async (req, res) => {
     const { username, password,role } = req.body;
     // Se almacena el nuevo usuario en la base de datos
     const user = new User({username, password,role});
-    await user.save() 
+    await user.save()
 
     res.json({msg: 'El usuario se creo correctamente'});
 }
